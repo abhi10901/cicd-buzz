@@ -78,6 +78,6 @@ var generate_buzz = () => {
     return phrase;
 };
 
-module.exports = { generate_buzz, getSample };
+module.exports = { generate_buzz, getSample, capitalizeFirst };
 
 // console.log(generate_buzz());
