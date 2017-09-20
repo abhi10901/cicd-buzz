@@ -27,6 +27,13 @@ describe("Testing generator", () => {
         });
     });
 
+    describe("Testing capitalize first character of the word", () => {
+        it("should capitalize initial character", () => {
+            let str = "abhishek";
+            expect(generator.capitalizeFirst(str)).to.be.equals("Abhishek");
+        });
+    });
+
     describe("Testing buzz generator", () => {
         it("should generate buzz of at least 5 words", () => {
             let phrase = generator.generate_buzz();
