@@ -6,7 +6,7 @@ else
     TAG="$TRAVIS_BRANCH"
 fi
 
-IFS='/' read -r -a TRAVIS_REPO <<< "$TRAVIS_REPO_SLUG"
+IFS=/ read -a TRAVIS_REPO <<< "$TRAVIS_REPO_SLUG"
 
 echo "${TRAVIS_REPO[0]}"
 echo "${TRAVIS_REPO[0]}"
