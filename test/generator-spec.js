@@ -34,6 +34,13 @@ describe("Testing generator", () => {
         });
     });
 
+    describe("Testing capitalize first of each word utility", () => {
+        it("should capitalize first letter of each word in statement", () => {
+            let statement = "hello world";
+            expect(generator.capitalizeFirstOfEachWord(statement)).to.be.equals("Hello World");
+        });
+    });
+
     describe("Testing buzz generator", () => {
         it("should generate buzz of at least 5 words", () => {
             let phrase = generator.generate_buzz();
