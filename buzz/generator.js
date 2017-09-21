@@ -30,7 +30,9 @@ const verbs = ['accelerates',
     'boosts'
 ];
 
-var getSample = (collection, size = 1) => {
+var getSample = (collection, size) => {
+    if (size === undefined || size === 0)
+        size = 1;
     return _lodash.sampleSize(collection, size);
 };
 
