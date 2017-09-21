@@ -6,7 +6,8 @@ services:
 language: node
 
 script: 
-  - "npm install && npm test"
+  - npm install
+  - npm test
 
 after_success: 
   - "sh .travis/deploy_dockerhub.sh"
