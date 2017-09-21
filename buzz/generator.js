@@ -35,7 +35,6 @@ var getSample = (collection, size = 1) => {
 };
 
 var capitalizeFirst = (str) => {
-    //console.log("Capitalizing first for : " + str);
     str = str && str[0].toUpperCase() + str.slice(1);
     return str;
 }
@@ -79,5 +78,3 @@ var generate_buzz = () => {
 };
 
 module.exports = { generate_buzz, getSample, capitalizeFirst };
-
-// console.log(generate_buzz());
