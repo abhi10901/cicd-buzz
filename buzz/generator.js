@@ -39,42 +39,26 @@ var capitalizeFirst = (str) => {
     return str;
 }
 
-var makeFirstLetterUpperOfEachWord = (collection, done) => {
+var capitalizeFirstOfEachWord = (statement) => {
 
-    let convertedCollection = collection.map(inItems => {
-        if (!_lodash.isArray(inItems)) {
-            let item = inItems;
-            return item
-                .split(" ")
-                .map(word => { return capitalizeFirst(word) })
-                .join(" ");
-        }
-
-        return inItems.map(item => {
-            return item
-                .split(" ")
-                .map(word => { return capitalizeFirst(word) })
-                .join(" ");
-        })
-    });
-
-    return done(null, convertedCollection);
+    return statement
+        .split(" ")
+        .map(word => { return capitalizeFirst(word) })
+        .join(" ");
 };
 
 var generate_buzz = () => {
     let buzz_terms = getSample(buzz, 2);
 
-    let phrase = makeFirstLetterUpperOfEachWord([
+    let phrase = _lodash.join([
         getSample(adjectives),
         buzz_terms[0],
         getSample(adverbs),
         getSample(verbs),
         buzz_terms[1]
-    ], function(err, convertedCollection) {
-        return _lodash.join(convertedCollection, ' ');
-    })
+    ], " ");
 
-    return phrase;
+    return capitalizeFirstOfEachWord(phrase);
 };
 
-module.exports = { generate_buzz, getSample, capitalizeFirst };
+module.exports = { generate_buzz, getSample, capitalizeFirst, capitalizeFirstOfEachWord };
